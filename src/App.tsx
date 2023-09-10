@@ -1,4 +1,4 @@
-import { Header, TransactionForm, TransactionsList } from './components';
+import { ExpenseChart, Header, TransactionForm, TransactionsList } from './components';
 import './App.css';
 
 export function App() {
@@ -10,6 +10,7 @@ export function App() {
                 <TransactionForm />
             </main>
             <footer className='bg-zinc-900 p-4 grid gap-2'>
+                <ExpenseChart />
                 <TransactionsList />
             </footer>
         </>
