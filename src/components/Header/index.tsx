@@ -1,6 +1,6 @@
 export function Header() {
     return (
-        <header className='grid gap-2'>
+        <header className='grid gap-2 bg-neutral-800 p-10 rounded-md w-full'>
             <section className=' flex justify-between items-center'>
                 <h4>Ingresos</h4>
                 <p>$10000</p>
