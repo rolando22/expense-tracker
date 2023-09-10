@@ -1,4 +1,4 @@
-import { Header, TransactionForm } from './components';
+import { Header, TransactionForm, TransactionsList } from './components';
 import './App.css';
 
 export function App() {
@@ -9,6 +9,9 @@ export function App() {
             <main className='bg-neutral-800 p-10 rounded-md w-full'>
                 <TransactionForm />
             </main>
+            <footer className='bg-zinc-900 p-4 grid gap-2'>
+                <TransactionsList />
+            </footer>
         </>
     );
 }
