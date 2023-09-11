@@ -7,7 +7,7 @@ export function TransactionsList() {
     return (
         <>
             <h3 className='text-slate-300 text-xl font-bold text-center'>Historial</h3>
-            <section className='lg:h-[125px]'>
+            <section>
                 <ul className='grid gap-2'>
                     {transactions.length > 0 
                         ? transactions.map(transaction => 

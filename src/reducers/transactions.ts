@@ -1,6 +1,6 @@
 import type { Transaction, TransactionWithId, TransactionsState, TransactionsTypeAction } from "../types/transaction";
 
-export const transactionsInitialState: TransactionsState = [] as TransactionsState;
+export const transactionsInitialState: TransactionsState = JSON.parse(localStorage.getItem('transactions_v1') ?? '[]') as TransactionsState
 
 const transactionsReducerObject = (state: TransactionsState, action: TransactionsTypeAction) => ({
     ['ADD_TRANSACTION']: () => {
@@ -8,10 +8,14 @@ const transactionsReducerObject = (state: TransactionsState, action: Transaction
             id: crypto.randomUUID(),
             ...action.payload as Transaction
         };
-        return [...state, newTransaction];
+        const newState = [...state, newTransaction];
+        localStorage.setItem('transactions_v1', JSON.stringify(newState));
+        return newState;
     },
     ['REMOVE_TRANSACTION']: () => {
-        return state.filter(transaction => transaction.id !== action.payload);
+        const newState = state.filter(transaction => transaction.id !== action.payload);
+        localStorage.setItem('transactions_v1', JSON.stringify(newState));
+        return newState;
     },
 });
 

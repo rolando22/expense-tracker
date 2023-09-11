@@ -16,9 +16,6 @@ export function App() {
                     <TransactionsList />
                 </section>
             </main>
-            {/* <footer className='bg-zinc-900 p-4 grid gap-2'>
-                
-            </footer> */}
         </TransactionsProvider>
     );
 }
