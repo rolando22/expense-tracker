@@ -24,13 +24,11 @@ export function TransactionsProvider({ children }: Props) {
     const removeTransaction = ({ id }: { id: string }) => dispatch({ type: 'REMOVE_TRANSACTION', payload: id });
 
     const [total, incomes, expense] = state
-        //.filter(transaction => transaction.amount > 0)
         .reduce((accumulador, transaction) => {
             accumulador[0] += transaction.amount;
             transaction.amount > 0 ? accumulador[1] += transaction.amount : accumulador[2] += transaction.amount;
             return accumulador;
         }, [0, 0, 0])
-        // .map(calc => calc.toFixed(2));
 
     return (
         <TransactionsContext.Provider value={{
