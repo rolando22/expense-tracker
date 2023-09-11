@@ -1,5 +1,6 @@
 import { VictoryLabel, VictoryPie } from 'victory';
 import { useTransactionsContext } from '../../hooks/useTransactionsContext';
+import { ChartIcon } from '..';
 
 export function ExpenseChart() {
     const { incomes, expense } = useTransactionsContext();
@@ -10,8 +11,9 @@ export function ExpenseChart() {
     return (
         <section className='bg-zinc-950'>
             {incomes === 0 && expense === 0 
-                ? <section className='flex justify-center items-center w-full h-full'>
-                    <p>No hay datos aún</p>
+                ? <section className='grid justify-center content-center w-full'>
+                    <ChartIcon />
+                    <p className='text-center'>No hay datos aún</p>
                 </section>
                 : <VictoryPie 
                     colorScale={["#e74c3c", "#2ecc71"]}

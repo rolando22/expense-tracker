@@ -13,6 +13,7 @@ export function TransactionForm() {
             description: formData.get('description')?.toString() ?? '',
         };
         addTransaction(newTransaction);
+        form.reset();
     };
 
     return (
