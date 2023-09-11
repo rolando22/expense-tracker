@@ -10,7 +10,9 @@ const transactionsReducerObject = (state: TransactionsState, action: Transaction
         };
         return [...state, newTransaction];
     },
-    ['REMOVE_TRANSACTION']: () => {},
+    ['REMOVE_TRANSACTION']: () => {
+        return state.filter(transaction => transaction.id !== action.payload);
+    },
 });
 
 export const transactionsReducer = (state: TransactionsState, action: TransactionsTypeAction) => {
