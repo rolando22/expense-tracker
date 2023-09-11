@@ -7,7 +7,7 @@ export interface TransactionWithId extends Transaction {
     id: string
 }
 
-export type TransactionsState = Transaction[]
+export type TransactionsState = TransactionWithId[]
 
 export type TransactionsTypeAction = 
     | { type: 'ADD_TRANSACTION', payload: Transaction}

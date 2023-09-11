@@ -1,7 +1,13 @@
 import { createContext, useReducer } from "react";
 import { transactionsInitialState, transactionsReducer } from "../reducers/transactions";
+import type { Transaction, TransactionWithId } from "../types/transaction";
 
-export const TransactionsContext = createContext({});
+interface ContextProps {
+    transactions: TransactionWithId[]
+    addTransaction: (transaction: Transaction) => void
+}
+
+export const TransactionsContext = createContext<ContextProps>({} as ContextProps);
 
 interface Props {
     children: JSX.Element[]
@@ -10,8 +16,13 @@ interface Props {
 export function TransactionsProvider({ children }: Props) {
     const [state, dispatch] = useReducer(transactionsReducer, transactionsInitialState);
 
+    const addTransaction = (transaction: Transaction) => dispatch({ type: 'ADD_TRANSACTION', payload: transaction });
+
     return (
-        <TransactionsContext.Provider value={{}}>
+        <TransactionsContext.Provider value={{
+            transactions: state,
+            addTransaction,
+        }}>
             {children}
         </TransactionsContext.Provider>
     );
