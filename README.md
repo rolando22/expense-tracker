@@ -12,4 +12,4 @@ Este repositorio contiene el código de una prueba técnica de una aplicación p
 - Victory para gráficar datos.
 - LocalStorage para la persistencia de la lista de lectura.
 
-Puedes ver el demo aquí: ().
+Puedes ver el demo aquí: (https://rolando22.github.io/expense-tracker/).
