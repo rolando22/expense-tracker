@@ -2,7 +2,7 @@
 
 El proyecto fue creado en el canal de YouTube de FaztCode [React Aplicación para administrar gastos e ingresos](https://www.youtube.com/@FaztCode).
 
-Este repositorio contiene el código de una prueba técnica de una aplicación para hacer un seguimiento de gastos e ingresos, y visualizarlos en un gráfico usando Victory.
+Este repositorio contiene el código de una aplicación para administrar gastos e ingresos, y visualizarlos en un gráfico usando Victory.
 
 - Desarrollada con React para manipulación del DOM y reactividad de la aplicación.
 - Vite como empaquetador y SWC como transpilador.
